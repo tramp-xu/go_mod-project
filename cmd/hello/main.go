@@ -2,6 +2,6 @@ package main
 
 import "github.com/astaxie/beego"
 
-func main()  {
+func main() {
 	beego.Run()
 }

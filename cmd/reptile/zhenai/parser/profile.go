@@ -10,8 +10,7 @@ import (
 var ageRe = regexp.MustCompile(`<td><span class="label">年龄: </span>([\d]+)岁</td>`)
 var marriageRe = regexp.MustCompile(`<td><span class="label">婚况: </span>([^<]+)</td>`)
 
-
-func ParseProfile(contents []byte, name string) engine.ParserResult  {
+func ParseProfile(contents []byte, name string) engine.ParserResult {
 	profile := models.Profile{}
 	profile.Name = name
 
@@ -22,9 +21,8 @@ func ParseProfile(contents []byte, name string) engine.ParserResult  {
 
 	profile.Marriage = extractString(contents, marriageRe)
 
-
 	result := engine.ParserResult{
-		Items:    []interface{}{profile},
+		Items: []interface{}{profile},
 	}
 	return result
 }
